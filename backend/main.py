@@ -10,11 +10,11 @@ app = FastAPI()
 class Query(BaseModel):
     query: str
 
-# Load data
-with open("data/assessments.json", "r", encoding="utf-8") as f:
+# Load assessment data
+with open("backend/data/assessments.json", "r", encoding="utf-8") as f:
     assessments = json.load(f)
 
-# Load recommender
+# Load model
 recommender = Recommender(assessments)
 
 @app.get("/health")
