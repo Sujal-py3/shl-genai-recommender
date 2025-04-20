@@ -1,8 +1,9 @@
 import json
 
 from fastapi import FastAPI
-from model import Recommender
 from pydantic import BaseModel
+
+from backend.model import Recommender
 
 app = FastAPI()
 
