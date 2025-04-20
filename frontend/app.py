@@ -14,7 +14,8 @@ if st.button("Get Recommendations"):
     else:
         with st.spinner("Querying backend..."):
             try:
-                response = requests.post("http://127.0.0.1:8000/recommend", json={"query": query})
+                response = requests.post("https://shl-genai-recommender.onrender.com/recommend", json={"query": query})
+
                 data = response.json()
                 if response.status_code == 200 and len(data) > 0:
                     # Define desired columns
